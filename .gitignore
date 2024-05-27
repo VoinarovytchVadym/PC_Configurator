@@ -1,0 +1,99 @@
+# Відстеження загальних налаштувань
+.DS_Store
+Thumbs.db
+
+# Відстеження вихідних та тимчасових файлів
+bin/
+obj/
+*.log
+
+# Відстеження налаштувань Rider
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Відстеження налаштувань Visual Studio
+.vscode/
+.vs/
+# Uncomment if you have tasks.json, launch.json files or need to ignore npm packages
+# .vscode/*
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# Пакети NuGet
+*.nupkg
+*.snupkg
+packages/
+# Uncomment if necessary however generally it will be restored by MSBuild
+# !packages/*.dll
+# Include if nuget creates the packages directory when building
+# Exclude if this is a repository that supports multiple platforms (like MacOS/Mono)
+# Ensure the next line is commented in those cases
+# packages/
+
+# Установка сертифікатів
+.vsix/
+
+# Логи, відновлювані відомості та інші операційні файли
+*.log
+*.tlog
+*.out
+*.csv
+*.svclog
+*.scc
+
+# Створені IDE файли
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mac-specific files
+*.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Rider specific files
+.idea/
+*.sln.iml

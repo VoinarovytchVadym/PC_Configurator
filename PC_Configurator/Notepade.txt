@@ -1,0 +1,9 @@
+Programming Principles: 
+    -
+
+Design Patterns: 
+    -singleton (Створення обєкта підключення до бази данних)
+    
+
+Refactoring Techniques: https://refactoring.guru/refactoring/techniques
+    -
