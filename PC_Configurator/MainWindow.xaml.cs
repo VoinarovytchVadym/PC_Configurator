@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using Microsoft.VisualBasic.ApplicationServices;
 using PC_Configurator.core;
 using PC_Configurator.models;
+using PC_Configurator.models.cpus.company;
+using PC_Configurator.models.cpus.product;
 using PC_Configurator.models.gpus.company;
 using PC_Configurator.models.gpus.product;
 
@@ -22,18 +24,12 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         DB db = DB.GetInstance();
-        ICompany company = new AMD();
-        IGpu gpu = company.CreateProduct("model", "vandor", "chip", 8, "type");
-        if (company is NVIDIA)
-        {
-            db.NvidiaGpus.Add((NvidaGpu)gpu);
-            db.SaveChanges();
-        }
-
-        if (company is AMD)
-        {
-            db.AmdGpus.Add((AmdGpu)gpu);
-            db.SaveChanges();
-        }
+        ICpuCompany cpuCompany = new Intel();
+        ICpu cpu = cpuCompany.CreateProduct("Line", "Socket", 4, 8, 4.2, "Intel UHD Graphics 770");
+        if (cpu is AmdCpu amdCpu)
+            db.AmdCpus.Add(amdCpu);
+        else if (cpu is IntelCpu intelCpu)
+            db.IntelCpus.Add(intelCpu);
+        db.SaveChanges();
     }
 }
