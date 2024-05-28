@@ -1,20 +1,14 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.VisualBasic.ApplicationServices;
+﻿using System.Windows;
 using PC_Configurator.core;
-using PC_Configurator.models;
-using PC_Configurator.models.cpus.company;
-using PC_Configurator.models.cpus.product;
-using PC_Configurator.models.gpus.company;
-using PC_Configurator.models.gpus.product;
+using PC_Configurator.models.cpus;
+using PC_Configurator.models.cpus.companies;
+using PC_Configurator.models.gpus;
+using PC_Configurator.models.gpus.companies;
+using PC_Configurator.models.pcs;
+using PC_Configurator.models.pcs.builders;
+using PC_Configurator.models.rams;
+using PC_Configurator.models.rams.companies;
+using AMD = PC_Configurator.models.gpus.companies.AMD;
 
 
 namespace PC_Configurator;
@@ -24,12 +18,19 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         DB db = DB.GetInstance();
+        IRamCompany ramCompany = new Kingston();
         ICpuCompany cpuCompany = new Intel();
-        ICpu cpu = cpuCompany.CreateProduct("Line", "Socket", 4, 8, 4.2, "Intel UHD Graphics 770");
-        if (cpu is AmdCpu amdCpu)
-            db.AmdCpus.Add(amdCpu);
-        else if (cpu is IntelCpu intelCpu)
-            db.IntelCpus.Add(intelCpu);
-        db.SaveChanges();
+        IGpuCompany gpuCompany = new NVIDIA();
+        Cpu cpu = cpuCompany.CreateProduct("line", "socket", 4, 8, 3.6, null);
+        Gpu gpu = gpuCompany.CreateProduct("model", "vendor", "chip", 10, "Type");
+        Ram ram = ramCompany.CreateProduct("type", 16, 2, 3200);
+
+        cpu.Id = 1;
+        gpu.Id = 1;
+        ram.Id = 1;
+        
+        PcConfiguration pc = ConfigurationBuilder.Create().ConfigurationNameIs("name")
+            .CpuIs(cpu).GpuIs(gpu).RamIs(ram).CreateConfiguration();
+        pc.SaveToDataBase();
     }
 }
