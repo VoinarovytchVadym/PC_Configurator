@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Configurator"
         mc:Ignorable="d"
+        Background="White"
+        MinWidth="1000"
+        MinHeight="600"
         Title="PC Configurator" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#f5f8e7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition MinWidth="150"/>
+                <ColumnDefinition MinWidth="150"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label x:Name="item" Content="Cpu" Grid.Column="0" Style="{DynamicResource CategoryLabel}"/>
+            <Label Content="Gpu" Grid.Column="1" Style="{DynamicResource CheckedCategoryLabel}"/>
+            <Label Content="Ram" Grid.Column="2" Style="{DynamicResource CategoryLabel}"/>
+            <Label Content="Motherboard" Grid.Column="3" Style="{DynamicResource CategoryLabel}"/>
+            <Label Content="Power supply" Grid.Column="4" Style="{DynamicResource CategoryLabel}"/>
+            <Label Content="SSD" Grid.Column="5" Style="{DynamicResource CategoryLabel}"/>
+            <Label Content="HDD" Grid.Column="6" Style="{DynamicResource CategoryLabel}"/>
+            <Label Content="Case" Grid.Column="7" Style="{DynamicResource CategoryLabel}"/>
+            <Border Grid.Column="8" Style="{DynamicResource SubmitButton}" MouseLeftButtonUp="Border_MouseLeftButtonUp">
+                <Label Content="Save"  FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0 0 0 6"/>
+            </Border>
+        </Grid>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

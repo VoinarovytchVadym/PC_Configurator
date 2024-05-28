@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Forms;
 using PC_Configurator.core;
 using PC_Configurator.models.cpus;
 using PC_Configurator.models.cpus.companies;
@@ -8,6 +9,7 @@ using PC_Configurator.models.pcs;
 using PC_Configurator.models.pcs.builders;
 using PC_Configurator.models.rams;
 using PC_Configurator.models.rams.companies;
+using PC_Configurator.views;
 using AMD = PC_Configurator.models.gpus.companies.AMD;
 
 
@@ -18,19 +20,16 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         DB db = DB.GetInstance();
-        IRamCompany ramCompany = new Kingston();
-        ICpuCompany cpuCompany = new Intel();
-        IGpuCompany gpuCompany = new NVIDIA();
-        Cpu cpu = cpuCompany.CreateProduct("line", "socket", 4, 8, 3.6, null);
-        Gpu gpu = gpuCompany.CreateProduct("model", "vendor", "chip", 10, "Type");
-        Ram ram = ramCompany.CreateProduct("type", 16, 2, 3200);
+    }
 
-        cpu.Id = 1;
-        gpu.Id = 1;
-        ram.Id = 1;
+    private void Border_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        TestPage testPage = new TestPage();
+        testPage.ItemSelected += SelectionPage_ItemSelected;
+        MainFrame.Content = testPage;
+    }
+    private void SelectionPage_ItemSelected(object sender, string selectedItem)
+    {
         
-        PcConfiguration pc = ConfigurationBuilder.Create().ConfigurationNameIs("name")
-            .CpuIs(cpu).GpuIs(gpu).RamIs(ram).CreateConfiguration();
-        pc.SaveToDataBase();
     }
 }
