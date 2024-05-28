@@ -2,7 +2,7 @@
 
 namespace PC_Configurator.models.gpus.company;
 
-public class NVIDIA : ICompany
+public class NVIDIA : IGpuCompany
 {
     public IGpu CreateProduct(string model, string vendor, string chip, int vram, string vramType)
     {

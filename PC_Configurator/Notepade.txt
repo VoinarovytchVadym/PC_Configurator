@@ -1,9 +1,18 @@
-Programming Principles: 
-    -
+Programming Principles: (5)
+    -Single Responsibility Principle
+    -KISS
+    -Composition over Inheritance(Реалізувати в моделі PC)
+    -DRY
+    -YAGNI
+    -Program to Interfaces, Not Implementations
 
-Design Patterns: 
+Design Patterns: (3)
     -singleton (Створення обєкта підключення до бази данних)
-    
-
-Refactoring Techniques: https://refactoring.guru/refactoring/techniques
+    -Abstract Factory (написання моделей)
     -
+
+Refactoring Techniques: https://refactoring.guru/refactoring/techniques (3)
+    -Inline Method
+    -Inline Temp
+    -Extract Variable
+    ...
