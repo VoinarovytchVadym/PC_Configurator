@@ -10,23 +10,30 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.VisualBasic.ApplicationServices;
 using PC_Configurator.core;
-
-using User = PC_Configurator.models.User;
+using PC_Configurator.models;
+using PC_Configurator.models.gpus.company;
+using PC_Configurator.models.gpus.product;
 
 
 namespace PC_Configurator;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
 public partial class MainWindow : Window
 {
     public MainWindow()
     {
         DB db = DB.GetInstance();
-        // User user = new User();
-        // user.name = "user";
-        // db.Users.Add(user);
-        // db.SaveChanges();
+        ICompany company = new AMD();
+        IGpu gpu = company.CreateProduct("model", "vandor", "chip", 8, "type");
+        if (company is NVIDIA)
+        {
+            db.NvidiaGpus.Add((NvidaGpu)gpu);
+            db.SaveChanges();
+        }
+
+        if (company is AMD)
+        {
+            db.AmdGpus.Add((AmdGpu)gpu);
+            db.SaveChanges();
+        }
     }
 }

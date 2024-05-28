@@ -1,14 +1,17 @@
 ﻿
 
+using System.Windows.Forms.VisualStyles;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic.ApplicationServices;
-using User = PC_Configurator.models.User;
+using PC_Configurator.models;
+using PC_Configurator.models.gpus.product;
 
 namespace PC_Configurator.core;
 
 sealed class DB : DbContext
 {
-    public DbSet<User> Users { get; set; }
+    public DbSet<NvidaGpu> NvidiaGpus { get; set; }
+    public DbSet<AmdGpu> AmdGpus { get; set; }
     
     private static DB? _db;
     private static readonly object RefObj = new object();
