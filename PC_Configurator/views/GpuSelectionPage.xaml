@@ -1,0 +1,15 @@
+﻿<Page x:Class="PC_Configurator.views.GpuSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PC_Configurator.views"
+      mc:Ignorable="d"
+      Title="GpuSelectionPage" Height="450" Width="800">
+    <Grid HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+           
+            <Button x:Name="submit" Width="100" Height="50" Margin="10 0 0 0" Click="Submit_OnClick">Submit</Button>
+        </StackPanel>
+    </Grid>
+</Page>

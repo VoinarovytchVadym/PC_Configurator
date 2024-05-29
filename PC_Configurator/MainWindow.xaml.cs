@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Input;
 using PC_Configurator.core;
 using PC_Configurator.models.cpus;
 using PC_Configurator.models.cpus.companies;
@@ -17,19 +18,28 @@ namespace PC_Configurator;
 
 public partial class MainWindow : Window
 {
+    private Gpu? _gpu;
+    private Cpu? _cpu;
     public MainWindow()
     {
         DB db = DB.GetInstance();
     }
 
-    private void Border_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    private void ViewCurrentConfiguration(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
-        TestPage testPage = new TestPage();
-        testPage.ItemSelected += SelectionPage_ItemSelected;
-        MainFrame.Content = testPage;
+        MainFrame.Navigate(new CurrentConfigurationPage(_gpu));
     }
-    private void SelectionPage_ItemSelected(object sender, string selectedItem)
+
+    private void GpuSave(object sender, Gpu selectedItem)
     {
-        
+        _gpu = selectedItem;
+        MainFrame.Navigate(new CurrentConfigurationPage(_gpu));
+    }
+
+    private void UIElement_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        GpuSelectionPage gpuSelectionPage = new GpuSelectionPage();
+        gpuSelectionPage.ItemSelected += GpuSave;
+        MainFrame.Navigate(gpuSelectionPage);
     }
 }
