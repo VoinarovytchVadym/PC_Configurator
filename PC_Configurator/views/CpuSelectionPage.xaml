@@ -18,7 +18,7 @@
                                 <StackPanel>
                                     <StackPanel Style="{DynamicResource ProductStackPanel}">
                                         <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
-                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding ProcessorFamily}"></Label>
+                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
                                     </StackPanel>
                                     <StackPanel Style="{DynamicResource ProductStackPanel}">
                                         <Label Style="{DynamicResource ProductLabel}">Line:</Label>
