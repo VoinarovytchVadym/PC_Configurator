@@ -22,7 +22,7 @@ public partial class MainWindow : Window
     private Cpu? _cpu;
     public MainWindow()
     {
-        DB db = DB.GetInstance();
+        InitializeComponent();
     }
 
     private void ViewCurrentConfiguration(object sender, System.Windows.Input.MouseButtonEventArgs e)

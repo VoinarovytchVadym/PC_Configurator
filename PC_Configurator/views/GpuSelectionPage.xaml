@@ -7,7 +7,7 @@
       mc:Ignorable="d"
       Title="GpuSelectionPage" Height="450" Width="800">
     <Grid>
-        <Border HorizontalAlignment="Center">
+        <Border>
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <ListView x:Name="GpusListView" SelectionChanged="GpusListView_SelectionChanged">
                     <ListView.ItemTemplate>
@@ -25,6 +25,18 @@
                                     <StackPanel Style="{DynamicResource ProductStackPanel}">
                                         <Label Style="{DynamicResource ProductLabel}">Vendor:</Label>
                                         <Label Style="{DynamicResource ProductValue}" Content="{Binding Vendor}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Chip:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Chip}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Vram:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Vram}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">VramType:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding VramType}"></Label>
                                     </StackPanel>
                                     <StackPanel Style="{DynamicResource ProductStackPanel}"></StackPanel>
                                 </StackPanel>

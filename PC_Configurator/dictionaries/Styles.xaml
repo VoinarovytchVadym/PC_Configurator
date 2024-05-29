@@ -5,7 +5,7 @@
         <Setter Property="Height" Value="40"/>
         <Setter Property="MaxWidth" Value="150"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Background" Value="#ececec"/>
+        <Setter Property="Background" Value="White"/>
         <Setter Property="Margin" Value="10"/>
     </Style>
     <Style x:Key="CheckedCategoryLabel" TargetType="{x:Type Label}">
