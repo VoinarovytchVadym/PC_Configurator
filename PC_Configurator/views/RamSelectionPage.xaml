@@ -1,0 +1,46 @@
+﻿<Page x:Class="PC_Configurator.views.RamSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PC_Configurator.views"
+      mc:Ignorable="d"
+      Title="RamSelectionPage" Height="450" Width="800">
+    <Grid>
+        <Border>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ListView x:Name="RamsListView" SelectionChanged="RamsListView_OnSelectionChanged"
+                          HorizontalAlignment="Center" BorderBrush="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{DynamicResource ProductBorder}">
+                                <StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
+                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Type:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Type}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Capacity:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Capacity}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">NumberOfModules:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding NumberOfModules}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Frequency:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Frequency}"></Label>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

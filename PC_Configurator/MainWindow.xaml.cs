@@ -42,9 +42,10 @@ public partial class MainWindow : Window
         CpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
 
     }
-    private void RamSave(object sender, Cpu selectedItem)
+    private void RamSave(object sender, Ram selectedItem)
     {
-        throw new NotImplementedException();
+        Ram = selectedItem;
+        RamLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
     private void MotherboardSave(object sender, Cpu selectedItem)
     {
@@ -70,20 +71,22 @@ public partial class MainWindow : Window
     private void GpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         GpuSelectionPage gpuSelectionPage = new GpuSelectionPage();
-        gpuSelectionPage.ItemSelected += GpuSave;
+        gpuSelectionPage.ItemSelected += GpuSave!;
         MainFrame.Navigate(gpuSelectionPage);
     }
     
     private void CpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         CpuSelectionPage cpuSelectionPage = new CpuSelectionPage();
-        cpuSelectionPage.ItemSelected += CpuSave;
+        cpuSelectionPage.ItemSelected += CpuSave!;
         MainFrame.Navigate(cpuSelectionPage);
     }
 
     private void RamLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        
+        RamSelectionPage ramSelectionPage = new RamSelectionPage();
+        ramSelectionPage.ItemSelected += RamSave!;
+        MainFrame.Navigate(ramSelectionPage);
     }
 
     private void MotherboardLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

@@ -44,7 +44,6 @@
                                         <Label Style="{DynamicResource ProductLabel}">GraphicsCore:</Label>
                                         <Label Style="{DynamicResource ProductValue}" Content="{Binding GraphicsCore}"></Label>
                                     </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}"></StackPanel>
                                 </StackPanel>
                             </Border>
                         </DataTemplate>
