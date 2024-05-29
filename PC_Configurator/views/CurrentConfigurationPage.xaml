@@ -1,0 +1,146 @@
+﻿<Page x:Class="PC_Configurator.views.CurrentConfigurationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PC_Configurator.views"
+      mc:Ignorable="d"
+      Title="CurrentConfigurationPage">
+    <Grid>
+        <Border>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <StackPanel HorizontalAlignment="Center">
+                    <ListView x:Name="SelectedCpu" HorizontalContentAlignment="Center" Visibility="Hidden">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{DynamicResource ConfigurationPageProductBorder}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="500"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Cpu</Label>
+                                        <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Line:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Line}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Socket:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Socket}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">CoresNumber:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding CoresNumber}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">StreamsNumber:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding StreamsNumber}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Frequency:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Frequency}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">GraphicsCore:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding GraphicsCore}"></Label>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView x:Name="SelectedGpu" HorizontalContentAlignment="Center" Visibility="Hidden">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{DynamicResource ConfigurationPageProductBorder}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="500"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Gpu</Label>
+                                        <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">ProcessorFamily:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding ProcessorFamily}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Model:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Model}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Vendor:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Vendor}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Chip:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Chip}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Vram:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Vram}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">VramType:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding VramType}"></Label>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ListView x:Name="SelectedRam" HorizontalContentAlignment="Center" Visibility="Hidden">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{DynamicResource ConfigurationPageProductBorder}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="500"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Ram</Label>
+                                        <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Type:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Type}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Capacity:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Capacity}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">NumberOfModules:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding NumberOfModules}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">StreamsNumber:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding StreamsNumber}"></Label>
+                                            </StackPanel>
+                                            <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackpanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">Frequency:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding Frequency}"></Label>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

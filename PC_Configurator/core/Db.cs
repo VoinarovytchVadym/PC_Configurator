@@ -9,27 +9,27 @@ using PC_Configurator.models.rams;
 
 namespace PC_Configurator.core;
 
-sealed class DB : DbContext
+sealed class Db : DbContext
 {
     public DbSet<Gpu> Gpus { get; set; }
     public DbSet<Cpu> Cpus { get; set; }
     public DbSet<Ram> Rams { get; set; }
     public DbSet<PcConfiguration> PcConfigurations { get; set; }
     
-    private static DB? _db;
+    private static Db? _db;
     private static readonly object RefObj = new object();
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=PC_Configurator;Integrated Security=True;TrustServerCertificate=True;");
     }
     
-    public static DB GetInstance()
+    public static Db GetInstance()
     {
         if (_db == null)
         {
             lock (RefObj)
             {
-                _db ??= new DB();
+                _db ??= new Db();
             }
         }
         return _db;

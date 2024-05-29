@@ -1,4 +1,6 @@
 ﻿using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Input;
 using PC_Configurator.core;
 using PC_Configurator.models.cpus;
 using PC_Configurator.models.cpus.companies;
@@ -8,6 +10,7 @@ using PC_Configurator.models.pcs;
 using PC_Configurator.models.pcs.builders;
 using PC_Configurator.models.rams;
 using PC_Configurator.models.rams.companies;
+using PC_Configurator.views;
 using AMD = PC_Configurator.models.gpus.companies.AMD;
 
 
@@ -15,22 +18,99 @@ namespace PC_Configurator;
 
 public partial class MainWindow : Window
 {
+    public static Gpu? Gpu;
+    public static Cpu? Cpu;
+    public static Ram? Ram;
     public MainWindow()
     {
-        DB db = DB.GetInstance();
-        IRamCompany ramCompany = new Kingston();
-        ICpuCompany cpuCompany = new Intel();
-        IGpuCompany gpuCompany = new NVIDIA();
-        Cpu cpu = cpuCompany.CreateProduct("line", "socket", 4, 8, 3.6, null);
-        Gpu gpu = gpuCompany.CreateProduct("model", "vendor", "chip", 10, "Type");
-        Ram ram = ramCompany.CreateProduct("type", 16, 2, 3200);
+        InitializeComponent();
+    }
 
-        cpu.Id = 1;
-        gpu.Id = 1;
-        ram.Id = 1;
-        
-        PcConfiguration pc = ConfigurationBuilder.Create().ConfigurationNameIs("name")
-            .CpuIs(cpu).GpuIs(gpu).RamIs(ram).CreateConfiguration();
-        pc.SaveToDataBase();
+    private void ViewCurrentConfiguration(object sender, System.Windows.Input.MouseButtonEventArgs e)
+    {
+        MainFrame.Navigate(new CurrentConfigurationPage());
+    }
+
+    private void GpuSave(object sender, Gpu selectedItem)
+    {
+        Gpu = selectedItem;
+        GpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
+    }
+    private void CpuSave(object sender, Cpu selectedItem)
+    {
+        Cpu = selectedItem;
+        CpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
+
+    }
+    private void RamSave(object sender, Ram selectedItem)
+    {
+        Ram = selectedItem;
+        RamLabel.Style = (Style)FindResource("CheckedCategoryLabel");
+    }
+    private void MotherboardSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void SsdSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void HddSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void PowerSupplySave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void CaseSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void GpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        GpuSelectionPage gpuSelectionPage = new GpuSelectionPage();
+        gpuSelectionPage.ItemSelected += GpuSave!;
+        MainFrame.Navigate(gpuSelectionPage);
+    }
+    
+    private void CpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        CpuSelectionPage cpuSelectionPage = new CpuSelectionPage();
+        cpuSelectionPage.ItemSelected += CpuSave!;
+        MainFrame.Navigate(cpuSelectionPage);
+    }
+
+    private void RamLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        RamSelectionPage ramSelectionPage = new RamSelectionPage();
+        ramSelectionPage.ItemSelected += RamSave!;
+        MainFrame.Navigate(ramSelectionPage);
+    }
+
+    private void MotherboardLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void PowerSupplyLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void SsdLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void HddLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void CaseLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }

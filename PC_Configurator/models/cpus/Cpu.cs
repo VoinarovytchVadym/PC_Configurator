@@ -16,7 +16,7 @@ public class Cpu(string producer, string line, string socket, int coresNumber, i
 
     public void SaveToDataBase()
     {
-        DB db = DB.GetInstance();
+        Db db = Db.GetInstance();
         db.Cpus.Add(this);
         db.SaveChanges();
     }

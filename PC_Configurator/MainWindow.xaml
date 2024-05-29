@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Configurator"
         mc:Ignorable="d"
+        Background="White"
+        MinWidth="1000"
+        MinHeight="600"
         Title="PC Configurator" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#f5f8e7">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition MinWidth="150"/>
+                <ColumnDefinition MinWidth="150"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label x:Name="CpuLabel" Content="Cpu" Grid.Column="0" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="CpuLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="GpuLabel" Content="Gpu" Grid.Column="1" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="GpuLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="RamLabel" Content="Ram" Grid.Column="2" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="RamLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="MotherboardLabel" Content="Motherboard" Grid.Column="3" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="MotherboardLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="PowerSupplyLabel" Content="Power supply" Grid.Column="4" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="PowerSupplyLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="SsdLabel" Content="SSD" Grid.Column="5" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="SsdLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="HddLabel" Content="HDD" Grid.Column="6" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="HddLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="CaseLabel" Content="Case" Grid.Column="7" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="CaseLabel_OnMouseLeftButtonUp"/>
+            <Border Grid.Column="8" Style="{DynamicResource SubmitButton}" MouseLeftButtonUp="ViewCurrentConfiguration">
+                <Label Content="Save"  FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0 0 0 6"/>
+            </Border>
+        </Grid>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
 
     </Grid>
 </Window>

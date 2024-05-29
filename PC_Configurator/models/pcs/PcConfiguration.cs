@@ -11,7 +11,7 @@ public class PcConfiguration : IProduct
     public int? RamId { get; set; } = null;
     public void SaveToDataBase()
     {
-        DB db = DB.GetInstance();
+        Db db = Db.GetInstance();
         db.PcConfigurations.Add(this);
         db.SaveChanges();
     }

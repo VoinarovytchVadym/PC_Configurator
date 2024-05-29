@@ -13,7 +13,7 @@ public class Gpu(string processorFamily, string model, string vendor, string chi
     public string VramType { get; set; } = vramType;
     public void SaveToDataBase()
     {
-        DB db = DB.GetInstance();
+        Db db = Db.GetInstance();
         db.Gpus.Add(this);
         db.SaveChanges();
     }
