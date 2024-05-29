@@ -18,8 +18,9 @@ namespace PC_Configurator;
 
 public partial class MainWindow : Window
 {
-    private Gpu? _gpu;
-    private Cpu? _cpu;
+    public static Gpu? Gpu;
+    public static Cpu? Cpu;
+    public static Ram? Ram;
     public MainWindow()
     {
         InitializeComponent();
@@ -27,20 +28,86 @@ public partial class MainWindow : Window
 
     private void ViewCurrentConfiguration(object sender, System.Windows.Input.MouseButtonEventArgs e)
     {
-        MainFrame.Navigate(new CurrentConfigurationPage(_gpu));
+        MainFrame.Navigate(new CurrentConfigurationPage());
     }
 
     private void GpuSave(object sender, Gpu selectedItem)
     {
-        _gpu = selectedItem;
-        MainFrame.Navigate(new CurrentConfigurationPage(_gpu));
+        Gpu = selectedItem;
         GpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
+    private void CpuSave(object sender, Cpu selectedItem)
+    {
+        Cpu = selectedItem;
+        CpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
 
-    private void UIElement_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    }
+    private void RamSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void MotherboardSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void SsdSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void HddSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void PowerSupplySave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+    private void CaseSave(object sender, Cpu selectedItem)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void GpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         GpuSelectionPage gpuSelectionPage = new GpuSelectionPage();
         gpuSelectionPage.ItemSelected += GpuSave;
         MainFrame.Navigate(gpuSelectionPage);
+    }
+    
+    private void CpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        CpuSelectionPage cpuSelectionPage = new CpuSelectionPage();
+        cpuSelectionPage.ItemSelected += CpuSave;
+        MainFrame.Navigate(cpuSelectionPage);
+    }
+
+    private void RamLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        
+    }
+
+    private void MotherboardLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void PowerSupplyLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void SsdLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void HddLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void CaseLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        throw new NotImplementedException();
     }
 }

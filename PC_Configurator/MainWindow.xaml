@@ -29,14 +29,14 @@
             </Grid.ColumnDefinitions>
 
 
-            <Label x:Name="CpuLabel" Content="Cpu" Grid.Column="0" Style="{DynamicResource CategoryLabel}"/>
-            <Label x:Name="GpuLabel" Content="Gpu" Grid.Column="1" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="UIElement_OnMouseLeftButtonUp"/>
-            <Label x:Name="RamLabel" Content="Ram" Grid.Column="2" Style="{DynamicResource CategoryLabel}"/>
-            <Label x:Name="MotherboardLabel" Content="Motherboard" Grid.Column="3" Style="{DynamicResource CategoryLabel}"/>
-            <Label x:Name="PowerSupplyLabel" Content="Power supply" Grid.Column="4" Style="{DynamicResource CategoryLabel}"/>
-            <Label x:Name="SSDLabel" Content="SSD" Grid.Column="5" Style="{DynamicResource CategoryLabel}"/>
-            <Label x:Name="HDDLabel" Content="HDD" Grid.Column="6" Style="{DynamicResource CategoryLabel}"/>
-            <Label x:Name="CaseLabel" Content="Case" Grid.Column="7" Style="{DynamicResource CategoryLabel}"/>
+            <Label x:Name="CpuLabel" Content="Cpu" Grid.Column="0" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="CpuLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="GpuLabel" Content="Gpu" Grid.Column="1" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="GpuLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="RamLabel" Content="Ram" Grid.Column="2" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="RamLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="MotherboardLabel" Content="Motherboard" Grid.Column="3" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="MotherboardLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="PowerSupplyLabel" Content="Power supply" Grid.Column="4" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="PowerSupplyLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="SsdLabel" Content="SSD" Grid.Column="5" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="SsdLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="HddLabel" Content="HDD" Grid.Column="6" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="HddLabel_OnMouseLeftButtonUp"/>
+            <Label x:Name="CaseLabel" Content="Case" Grid.Column="7" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="CaseLabel_OnMouseLeftButtonUp"/>
             <Border Grid.Column="8" Style="{DynamicResource SubmitButton}" MouseLeftButtonUp="ViewCurrentConfiguration">
                 <Label Content="Save"  FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0 0 0 6"/>
             </Border>

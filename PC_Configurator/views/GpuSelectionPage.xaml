@@ -5,11 +5,11 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:PC_Configurator.views"
       mc:Ignorable="d"
-      Title="GpuSelectionPage" Height="450" Width="800">
+      Title="GpuSelectionPage">
     <Grid>
         <Border>
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <ListView x:Name="GpusListView" SelectionChanged="GpusListView_SelectionChanged">
+                <ListView x:Name="GpusListView" SelectionChanged="GpusListView_SelectionChanged" HorizontalAlignment="Center" BorderBrush="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Border Style="{DynamicResource ProductBorder}">

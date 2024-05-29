@@ -5,9 +5,9 @@ namespace PC_Configurator.views;
 
 public partial class CurrentConfigurationPage : Page
 {
-    public CurrentConfigurationPage(Gpu? gpu)
+    public CurrentConfigurationPage()
     {
         InitializeComponent();
-        GpuInfo.Content = gpu.Id;
+        
     }
 }

@@ -14,7 +14,7 @@ public class Ram(string producer, string type, int capacity, int numberOfModules
 
     public void SaveToDataBase()
     {
-        DB db = DB.GetInstance();
+        Db db = Db.GetInstance();
         db.Rams.Add(this);
         db.SaveChanges();
     }
