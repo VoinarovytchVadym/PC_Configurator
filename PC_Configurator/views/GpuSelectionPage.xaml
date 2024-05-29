@@ -6,10 +6,33 @@
       xmlns:local="clr-namespace:PC_Configurator.views"
       mc:Ignorable="d"
       Title="GpuSelectionPage" Height="450" Width="800">
-    <Grid HorizontalAlignment="Center">
-        <StackPanel Orientation="Horizontal">
-           
-            <Button x:Name="submit" Width="100" Height="50" Margin="10 0 0 0" Click="Submit_OnClick">Submit</Button>
-        </StackPanel>
+    <Grid>
+        <Border HorizontalAlignment="Center">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ListView x:Name="GpusListView" SelectionChanged="GpusListView_SelectionChanged">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{DynamicResource ProductBorder}">
+                                <StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">ProcessorFamily:</Label>
+                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding ProcessorFamily}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Model:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Model}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Vendor:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Vendor}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}"></StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Page>

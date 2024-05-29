@@ -7,14 +7,21 @@ namespace PC_Configurator.views;
 
 public partial class GpuSelectionPage : Page
 {
+    List<Gpu> gpuList;
     public GpuSelectionPage()
     {
         InitializeComponent();
+        DB db = DB.GetInstance();
+        gpuList = db.Gpus.ToList();
+        GpusListView.ItemsSource = gpuList;
     }
     public event EventHandler<Gpu> ItemSelected;
 
-    private void Submit_OnClick(object sender, RoutedEventArgs e)
+    private void GpusListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        
+        DB db = DB.GetInstance();
+        Gpu gpu = db.Gpus.FirstOrDefault(u => u.Id == gpuList[GpusListView.SelectedIndex].Id);
+        ItemSelected.Invoke(this, gpu);
+        NavigationService.Content = null;
     }
 }

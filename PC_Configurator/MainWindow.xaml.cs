@@ -34,6 +34,7 @@ public partial class MainWindow : Window
     {
         _gpu = selectedItem;
         MainFrame.Navigate(new CurrentConfigurationPage(_gpu));
+        GpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
 
     private void UIElement_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

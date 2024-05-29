@@ -8,5 +8,6 @@ public partial class CurrentConfigurationPage : Page
     public CurrentConfigurationPage(Gpu? gpu)
     {
         InitializeComponent();
+        GpuInfo.Content = gpu.Id;
     }
 }
