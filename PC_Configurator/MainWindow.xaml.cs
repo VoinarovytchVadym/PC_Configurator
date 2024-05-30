@@ -95,26 +95,37 @@ public partial class MainWindow : Window
 
     private void MotherboardLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        MotherboardSelectionPage motherboardSelectionPage = new MotherboardSelectionPage();
+        motherboardSelectionPage.ItemSelected += MotherboardSave!;
+        MainFrame.Navigate(motherboardSelectionPage);
+
     }
 
-    private void PowerSupplyLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-    {
-        throw new NotImplementedException();
-    }
 
     private void SsdLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        SsdSelectionPage ssdSelectionPage = new SsdSelectionPage();
+        ssdSelectionPage.ItemSelected += SsdSave!;
+        MainFrame.Navigate(ssdSelectionPage);
     }
 
     private void HddLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        HddSelectionPage hddSelectionPage = new HddSelectionPage();
+        hddSelectionPage.ItemSelected += HddSave!;
+        MainFrame.Navigate(hddSelectionPage);
+    }
+    private void PowerSupplyLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        PowerSupplieSelectionPage powerSupplieSelectionPage = new PowerSupplieSelectionPage();
+        powerSupplieSelectionPage.ItemSelected += PowerSupplySave;
+        MainFrame.Navigate(powerSupplieSelectionPage);
     }
 
     private void CaseLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        CaseSelectionPage caseSelectionPage = new CaseSelectionPage();
+        caseSelectionPage.ItemSelected += CaseSave!;
+        MainFrame.Navigate(caseSelectionPage);
     }
 }

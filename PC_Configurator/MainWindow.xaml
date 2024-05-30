@@ -25,7 +25,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition MinWidth="150"/>
             </Grid.ColumnDefinitions>
 
 
@@ -38,7 +38,7 @@
             <Label x:Name="HddLabel" Content="HDD" Grid.Column="6" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="HddLabel_OnMouseLeftButtonUp"/>
             <Label x:Name="CaseLabel" Content="Case" Grid.Column="7" Style="{DynamicResource CategoryLabel}" MouseLeftButtonUp="CaseLabel_OnMouseLeftButtonUp"/>
             <Border Grid.Column="8" Style="{DynamicResource SubmitButton}" MouseLeftButtonUp="ViewCurrentConfiguration">
-                <Label Content="Save"  FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0 0 0 6"/>
+                <Label Content="Configuration"  FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0 0 0 6"/>
             </Border>
         </Grid>
 
