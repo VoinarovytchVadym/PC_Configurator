@@ -1,6 +1,4 @@
-﻿using PC_Configurator.models.cpus;
-using PC_Configurator.models.gpus;
-using PC_Configurator.models.rams;
+﻿using PC_Configurator.models.products;
 
 namespace PC_Configurator.models.pcs;
 

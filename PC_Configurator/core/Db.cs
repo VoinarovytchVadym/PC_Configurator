@@ -1,11 +1,6 @@
-﻿using System.Windows.Forms.VisualStyles;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic.ApplicationServices;
-using PC_Configurator.models;
-using PC_Configurator.models.cpus;
-using PC_Configurator.models.gpus;
+﻿using Microsoft.EntityFrameworkCore;
 using PC_Configurator.models.pcs;
-using PC_Configurator.models.rams;
+using PC_Configurator.models.products;
 
 namespace PC_Configurator.core;
 
@@ -14,6 +9,12 @@ sealed class Db : DbContext
     public DbSet<Gpu> Gpus { get; set; }
     public DbSet<Cpu> Cpus { get; set; }
     public DbSet<Ram> Rams { get; set; }
+    public DbSet<Case> Cases { get; set; }
+    public DbSet<Ssd> Ssds { get; set; }
+    public DbSet<Hdd> Hdds { get; set; }
+    public DbSet<Motherboard> Motherboards { get; set; }
+    public DbSet<PowerSupplie> PowerSupplies { get; set; }
+    
     public DbSet<PcConfiguration> PcConfigurations { get; set; }
     
     private static Db? _db;

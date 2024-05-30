@@ -1,6 +1,6 @@
 ﻿using PC_Configurator.core;
 
-namespace PC_Configurator.models.gpus;
+namespace PC_Configurator.models.products;
 
 public class Gpu(string processorFamily, string model, string vendor, string chip, int vram, string vramType)
 {

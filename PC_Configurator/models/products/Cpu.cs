@@ -1,6 +1,6 @@
 ﻿using PC_Configurator.core;
 
-namespace PC_Configurator.models.cpus;
+namespace PC_Configurator.models.products;
 
 public class Cpu(string producer, string line, string socket, int coresNumber, int streamsNumber, double frequency, string? graphicsCore)
     : IProduct

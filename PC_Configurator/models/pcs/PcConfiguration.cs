@@ -1,4 +1,5 @@
 ﻿using PC_Configurator.core;
+using PC_Configurator.models.products;
 
 namespace PC_Configurator.models.pcs;
 

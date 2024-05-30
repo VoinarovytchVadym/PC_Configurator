@@ -1,6 +1,6 @@
 ﻿using PC_Configurator.core;
 
-namespace PC_Configurator.models.rams;
+namespace PC_Configurator.models.products;
 
 public class Ram(string producer, string type, int capacity, int numberOfModules, int frequency)
 : IProduct
