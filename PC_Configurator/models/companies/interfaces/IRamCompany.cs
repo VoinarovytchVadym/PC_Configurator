@@ -1,4 +1,6 @@
-﻿namespace PC_Configurator.models.rams.companies;
+﻿using PC_Configurator.models.products;
+
+namespace PC_Configurator.models.companies.interfaces;
 
 public interface IRamCompany
 {

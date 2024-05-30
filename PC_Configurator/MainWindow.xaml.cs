@@ -2,16 +2,10 @@
 using System.Windows.Forms;
 using System.Windows.Input;
 using PC_Configurator.core;
-using PC_Configurator.models.cpus;
-using PC_Configurator.models.cpus.companies;
-using PC_Configurator.models.gpus;
-using PC_Configurator.models.gpus.companies;
 using PC_Configurator.models.pcs;
 using PC_Configurator.models.pcs.builders;
-using PC_Configurator.models.rams;
-using PC_Configurator.models.rams.companies;
+using PC_Configurator.models.products;
 using PC_Configurator.views;
-using AMD = PC_Configurator.models.gpus.companies.AMD;
 
 
 namespace PC_Configurator;

@@ -1,6 +1,8 @@
 ﻿
 
-namespace PC_Configurator.models.gpus.companies;
+using PC_Configurator.models.products;
+
+namespace PC_Configurator.models.companies.interfaces;
 
 public interface IGpuCompany
 {

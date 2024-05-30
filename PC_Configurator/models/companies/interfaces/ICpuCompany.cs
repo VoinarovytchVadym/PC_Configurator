@@ -1,4 +1,6 @@
-﻿namespace PC_Configurator.models.cpus.companies;
+﻿using PC_Configurator.models.products;
+
+namespace PC_Configurator.models.companies.interfaces;
 
 public interface ICpuCompany
 {

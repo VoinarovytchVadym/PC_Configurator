@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 using PC_Configurator.core;
-using PC_Configurator.models.gpus;
+using PC_Configurator.models.products;
 
 namespace PC_Configurator.views;
 
