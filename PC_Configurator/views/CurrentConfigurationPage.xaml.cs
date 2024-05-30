@@ -32,5 +32,40 @@ public partial class CurrentConfigurationPage : Page
             SelectedRam.ItemsSource = ram;
             SelectedRam.Visibility = Visibility.Visible;
         }
+
+        if (MainWindow.Motherboard != null)
+        {
+            List<Motherboard> motherboards = [MainWindow.Motherboard];
+            SelectedMotherboard.ItemsSource = motherboards;
+            SelectedMotherboard.Visibility = Visibility.Visible;
+        }
+
+        if (MainWindow.Ssd != null)
+        {
+            List<Ssd> ssds = [MainWindow.Ssd];
+            SelectedSsd.ItemsSource = ssds;
+            SelectedSsd.Visibility = Visibility.Visible;
+        }
+
+        if (MainWindow.Hdd != null)
+        {
+            List<Hdd> hdds = [MainWindow.Hdd];
+            SelectedHdd.ItemsSource = hdds;
+            SelectedHdd.Visibility = Visibility.Visible;
+        }
+
+        if (MainWindow.PowerSupplie != null)
+        {
+            List<PowerSupplie> powerSupplies = [MainWindow.PowerSupplie];
+            SelectedPowerSupplie.ItemsSource = powerSupplies;
+            SelectedPowerSupplie.Visibility = Visibility.Visible;
+        }
+
+        if (MainWindow.Case != null)
+        {
+            List<Case> cases = [MainWindow.Case];
+            SelectedCase.ItemsSource = cases;
+            SelectedCase.Visibility = Visibility.Visible;
+        }
     }
 }
