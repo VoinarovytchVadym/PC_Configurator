@@ -10,7 +10,11 @@
         <Border>
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
                 <StackPanel HorizontalAlignment="Center">
-                    
+                    <Label FontSize="24" HorizontalAlignment="Center" FontWeight="Bold">Configuration name</Label>
+                    <TextBox x:Name="ConfigurationName" Style="{DynamicResource ConfigurationPageTextBox}"/>
+                    <Border x:Name="SaveButton" Margin="10" Style="{DynamicResource SubmitButton}" MouseLeftButtonUp="SaveButton_OnMouseLeftButtonUp">
+                        <Label HorizontalAlignment="Center" Style="{DynamicResource ProductLabel}">Save Configuration</Label>
+                    </Border>
                     <ListView x:Name="SelectedCpu" Style="{DynamicResource ConfigurationPageProductListView}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -22,6 +26,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Cpu</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
@@ -67,6 +75,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Gpu</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">ProcessorFamily:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding ProcessorFamily}"></Label>
@@ -108,6 +120,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Ram</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
@@ -149,6 +165,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Motherboard</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
@@ -194,6 +214,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Ssd</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
@@ -235,6 +259,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Hdd</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
@@ -272,6 +300,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">PowerSupplie</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
@@ -301,6 +333,10 @@
                                         </Grid.ColumnDefinitions>
                                         <Label Style="{DynamicResource ConfigurationPageProductLabel}" Grid.Column="0">Case</Label>
                                         <StackPanel Grid.Column="1">
+                                            <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                                <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                                <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                            </StackPanel>
                                             <StackPanel Style="{DynamicResource ConfigurationPageProductInfoStackPanel}">
                                                 <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
                                                 <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>

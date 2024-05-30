@@ -15,8 +15,12 @@
                             <Border Style="{DynamicResource ProductBorder}">
                                 <StackPanel>
                                     <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
                                         <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
-                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
                                     </StackPanel>
                                     <StackPanel Style="{DynamicResource ProductStackPanel}">
                                         <Label Style="{DynamicResource ProductLabel}">Size:</Label>

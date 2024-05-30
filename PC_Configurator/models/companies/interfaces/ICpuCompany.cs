@@ -4,5 +4,5 @@ namespace PC_Configurator.models.companies.interfaces;
 
 public interface ICpuCompany
 {
-    public Cpu CreateProduct(string line, string socket, int coresNumber, int streamsNumber, double frequency, string? graphicsCore);
+    public Cpu CreateProduct(string line, string socket, int coresNumber, int streamsNumber, double frequency, string? graphicsCore, string fullName);
 }

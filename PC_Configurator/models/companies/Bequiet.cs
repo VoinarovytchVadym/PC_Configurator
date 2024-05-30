@@ -5,13 +5,13 @@ namespace PC_Configurator.models.companies;
 
 public class Bequiet : ICaseCompany, IPowerSupplieCompany
 {
-    public Case CreateProduct(string size, string maxMotherboardFormFactor)
+    public Case CreateProduct(string size, string maxMotherboardFormFactor, string fullName)
     {
-        return new Case("bequiet!", size, maxMotherboardFormFactor);
+        return new Case("bequiet!", size, maxMotherboardFormFactor,fullName);
     }
 
-    public PowerSupplie CreateProduct(string formFactor, int power)
+    public PowerSupplie CreateProduct(string formFactor, int power, string fullName)
     {
-        return new PowerSupplie("bequiet!", formFactor, power);
+        return new PowerSupplie("bequiet!", formFactor, power,fullName);
     }
 }
