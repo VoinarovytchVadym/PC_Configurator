@@ -15,6 +15,11 @@ public partial class MainWindow : Window
     public static Gpu? Gpu;
     public static Cpu? Cpu;
     public static Ram? Ram;
+    public static Motherboard? Motherboard;
+    public static Ssd? Ssd;
+    public static Hdd? Hdd;
+    public static PowerSupplie? PowerSupplie;
+    public static Case? Case;
     public MainWindow()
     {
         InitializeComponent();
@@ -41,25 +46,30 @@ public partial class MainWindow : Window
         Ram = selectedItem;
         RamLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
-    private void MotherboardSave(object sender, Cpu selectedItem)
+    private void MotherboardSave(object sender, Motherboard selectedItem)
     {
-        throw new NotImplementedException();
+        Motherboard = selectedItem;
+        MotherboardLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
-    private void SsdSave(object sender, Cpu selectedItem)
+    private void SsdSave(object sender, Ssd selectedItem)
     {
-        throw new NotImplementedException();
+        Ssd = selectedItem;
+        SsdLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
-    private void HddSave(object sender, Cpu selectedItem)
+    private void HddSave(object sender, Hdd selectedItem)
     {
-        throw new NotImplementedException();
+        Hdd = selectedItem;
+        HddLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
-    private void PowerSupplySave(object sender, Cpu selectedItem)
+    private void PowerSupplySave(object sender, PowerSupplie selectedItem)
     {
-        throw new NotImplementedException();
+        PowerSupplie = selectedItem;
+        PowerSupplyLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
-    private void CaseSave(object sender, Cpu selectedItem)
+    private void CaseSave(object sender, Case selectedItem)
     {
-        throw new NotImplementedException();
+        Case = selectedItem;
+        CaseLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
 
     private void GpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

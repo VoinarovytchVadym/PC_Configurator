@@ -1,0 +1,53 @@
+﻿<Page x:Class="PC_Configurator.views.MotherboardSelectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:PC_Configurator.views"
+      mc:Ignorable="d"
+      Title="MotherboardSelectionPage" Height="450" Width="800">
+     <Grid>
+        <Border>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ListView x:Name="MotherboardListView" SelectionChanged="MotherboardListView_OnSelectionChanged" HorizontalAlignment="Center" BorderBrush="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{DynamicResource ProductBorder}">
+                                <StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
+                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">ForProcessors:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding ForProcessors}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Socket:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Socket}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Chipset:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Chipset}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">FormFactor:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding FormFactor}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">MemoryType:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding MemoryType}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">MemorySlotsNumber:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding MemorySlotsNumber}"></Label>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

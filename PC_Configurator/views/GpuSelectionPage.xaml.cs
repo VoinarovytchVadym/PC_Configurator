@@ -6,7 +6,7 @@ namespace PC_Configurator.views;
 
 public partial class GpuSelectionPage : Page
 {
-    readonly List<Gpu> _gpuList;
+    private readonly List<Gpu> _gpuList;
     private readonly Db _db = Db.GetInstance();
     public GpuSelectionPage()
     {
