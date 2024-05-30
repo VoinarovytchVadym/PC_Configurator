@@ -7,6 +7,39 @@
       mc:Ignorable="d"
       Title="HddSelectionPage" Height="450" Width="800">
     <Grid>
-        
+        <Border>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ListView x:Name="HddsListView" SelectionChanged="HddsListView_OnSelectionChanged" HorizontalAlignment="Center" BorderBrush="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Style="{DynamicResource ProductBorder}">
+                                <StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
+                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">FormFactor:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding FormFactor}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">MemoryCapacity:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding MemoryCapacity}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">Interface:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Interface}"></Label>
+                                    </StackPanel>
+                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                        <Label Style="{DynamicResource ProductLabel}">RotatingSpeed:</Label>
+                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding ReadingSpeed}"></Label>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Border>
     </Grid>
 </Page>

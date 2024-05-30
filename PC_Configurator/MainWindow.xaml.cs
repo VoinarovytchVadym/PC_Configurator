@@ -95,7 +95,10 @@ public partial class MainWindow : Window
 
     private void MotherboardLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        MotherboardSelectionPage motherboardSelectionPage = new MotherboardSelectionPage();
+        motherboardSelectionPage.ItemSelected += MotherboardSave!;
+        MainFrame.Navigate(motherboardSelectionPage);
+
     }
 
     private void PowerSupplyLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -105,12 +108,16 @@ public partial class MainWindow : Window
 
     private void SsdLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        SsdSelectionPage ssdSelectionPage = new SsdSelectionPage();
+        ssdSelectionPage.ItemSelected += SsdSave!;
+        MainFrame.Navigate(ssdSelectionPage);
     }
 
     private void HddLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
-        throw new NotImplementedException();
+        HddSelectionPage hddSelectionPage = new HddSelectionPage();
+        hddSelectionPage.ItemSelected += HddSave!;
+        MainFrame.Navigate(hddSelectionPage);
     }
 
     private void CaseLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

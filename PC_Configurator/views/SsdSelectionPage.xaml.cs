@@ -14,8 +14,8 @@ public partial class SsdSelectionPage : Page
         _ssdList = _db.Ssds.ToList();
         SsdsListView.ItemsSource = _ssdList;
     }
-
     public event EventHandler<Ssd> ItemSelected;
+    
     private void SsdsListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         ItemSelected.Invoke(this, _db.Ssds.FirstOrDefault(u=> u.Id == _ssdList[SsdsListView.SelectedIndex].Id)!);
