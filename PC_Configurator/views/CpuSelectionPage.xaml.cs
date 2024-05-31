@@ -15,15 +15,24 @@ namespace PC_Configurator.views
         public CpuSelectionPage()
         {
             InitializeComponent();
-            _cpuList = _db.Cpus.ToList();
+            if (MainWindow.Motherboard == null)
+                _cpuList = _db.Cpus.ToList();
+            else
+                _cpuList = _db.Cpus.Where(u => u.Socket == MainWindow.Motherboard.Socket).ToList();
             CpusListView.ItemsSource = _cpuList;
         }
         public event EventHandler<Cpu> ItemSelected;
+        public event EventHandler DeleteSelection;
 
         private void CpusListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ItemSelected.Invoke(this, _db.Cpus.FirstOrDefault(u=>u.Id==_cpuList[CpusListView.SelectedIndex].Id)!);
             NavigationService!.Content = null;
+        }
+
+        private void Border_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DeleteSelection?.Invoke(this, EventArgs.Empty);
         }
     }
 }

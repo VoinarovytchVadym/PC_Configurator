@@ -4,5 +4,5 @@ namespace PC_Configurator.models.companies.interfaces;
 
 public interface IPowerSupplieCompany
 {
-    public PowerSupplie CreateProduct(string formFactor, int power);
+    public PowerSupplie CreateProduct(string formFactor, int power, string fullName);
 }

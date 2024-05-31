@@ -2,10 +2,11 @@
 
 namespace PC_Configurator.models.products;
 
-public class Motherboard(string producer, string forProcessors, string socket, string chipset, string formFactor, string memoryType, int memorySlotsNumber)
+public class Motherboard(string producer, string forProcessors, string socket, string chipset, string formFactor, string memoryType, int memorySlotsNumber, string fullName)
     : IProduct
 {
     public int Id { get; set; }
+    public string FullName { get; set; } = fullName;
     public string Producer { get; set; } = producer;
     public string ForProcessors { get; set; } = forProcessors;
     public string Socket { get; set; } = socket;

@@ -2,10 +2,11 @@
 
 namespace PC_Configurator.models.products;
 
-public class Hdd(string producer, string formFactor, int memoryCapacity, string @interface, int rotatingSpeed)
+public class Hdd(string producer, string formFactor, int memoryCapacity, string @interface, int rotatingSpeed, string fullName)
     : IProduct
 {
     public int Id { get; set; }
+    public string FullName { get; set; } = fullName;
     public string Producer { get; set; } = producer;
     public string FormFactor { get; set; } = formFactor;
     public int MemoryCapacity { get; set; } = memoryCapacity;

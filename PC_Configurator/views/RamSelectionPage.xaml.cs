@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
 using PC_Configurator.core;
 using PC_Configurator.models.products;
 
@@ -16,10 +17,17 @@ public partial class RamSelectionPage : Page
     }
 
     public event EventHandler<Ram> ItemSelected = null!;
+    public event EventHandler DeleteSelection;
 
     private void RamsListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         ItemSelected.Invoke(this,_db.Rams.FirstOrDefault(u=>u.Id == _ramList[RamsListView.SelectedIndex].Id)!);
         NavigationService!.Content = null;
+    }
+
+    private void Border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        DeleteSelection?.Invoke(this, EventArgs.Empty);
+
     }
 }

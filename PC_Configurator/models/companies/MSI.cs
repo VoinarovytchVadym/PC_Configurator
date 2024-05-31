@@ -6,8 +6,8 @@ namespace PC_Configurator.models.companies;
 public class MSI : IMotherboardCompany
 {
     public Motherboard CreateProduct(string forProcessors, string socket, string chipset, string formFactor, string memoryType,
-        int memorySlotsNumber)
+        int memorySlotsNumber, string fullName)
     {
-        return new Motherboard("MSI", forProcessors, socket, chipset, formFactor, memoryType, memorySlotsNumber);
+        return new Motherboard("MSI", forProcessors, socket, chipset, formFactor, memoryType, memorySlotsNumber,fullName);
     }
 }

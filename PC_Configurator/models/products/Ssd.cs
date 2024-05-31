@@ -8,10 +8,12 @@ public class Ssd(
     int memoryCapacity,
     string @interface,
     int readingSpeed,
-    int recordingSpeed)
+    int recordingSpeed,
+    string fullName)
     : IProduct
 {
     public int Id { get; set; }
+    public string FullName { get; set; } = fullName;
     public string Producer { get; set; } = producer;
     public string FormFactor { get; set; } = formFactor;
     public int MemoryCapacity { get; set; } = memoryCapacity;

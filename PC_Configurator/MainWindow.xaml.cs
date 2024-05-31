@@ -30,66 +30,122 @@ public partial class MainWindow : Window
         MainFrame.Navigate(new CurrentConfigurationPage());
     }
 
-    private void GpuSave(object sender, Gpu selectedItem)
-    {
-        Gpu = selectedItem;
-        GpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
-    }
     private void CpuSave(object sender, Cpu selectedItem)
     {
         Cpu = selectedItem;
         CpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
 
     }
+    private void CpuDelete(object sender, EventArgs e)
+    {
+        Cpu = null;
+        CpuLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
+    private void GpuSave(object sender, Gpu selectedItem)
+    {
+        Gpu = selectedItem;
+        GpuLabel.Style = (Style)FindResource("CheckedCategoryLabel");
+    }
+    private void GpuDelete(object sender, EventArgs e)
+    {
+        Gpu = null;
+        GpuLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
     private void RamSave(object sender, Ram selectedItem)
     {
         Ram = selectedItem;
         RamLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
+    private void RamDelete(object sender, EventArgs e)
+    {
+        Ram = null;
+        RamLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
     private void MotherboardSave(object sender, Motherboard selectedItem)
     {
         Motherboard = selectedItem;
         MotherboardLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
+    private void MotherboardDelete(object sender, EventArgs e)
+    {
+        Motherboard = null;
+        MotherboardLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
     private void SsdSave(object sender, Ssd selectedItem)
     {
         Ssd = selectedItem;
         SsdLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
+    private void SsdDelete(object sender, EventArgs e)
+    {
+        Ssd = null;
+        SsdLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
     private void HddSave(object sender, Hdd selectedItem)
     {
         Hdd = selectedItem;
         HddLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
-    private void PowerSupplySave(object sender, PowerSupplie selectedItem)
+    private void HddDelete(object sender, EventArgs e)
+    {
+        Hdd = null;
+        HddLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
+    private void PowerSupplieSave(object sender, PowerSupplie selectedItem)
     {
         PowerSupplie = selectedItem;
         PowerSupplyLabel.Style = (Style)FindResource("CheckedCategoryLabel");
     }
+    private void PowerSupplieDelete(object sender, EventArgs e)
+    {
+        PowerSupplie = null;
+        PowerSupplyLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    
+    
     private void CaseSave(object sender, Case selectedItem)
     {
         Case = selectedItem;
         CaseLabel.Style = (Style)FindResource("CheckedCategoryLabel");
+    }
+    private void CaseDelete(object sender, EventArgs e)
+    {
+        Case = null;
+        CaseLabel.Style = (Style)FindResource("CategoryLabel");
+    }
+    private void CpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        CpuSelectionPage cpuSelectionPage = new CpuSelectionPage();
+        cpuSelectionPage.ItemSelected += CpuSave!;
+        cpuSelectionPage.DeleteSelection += CpuDelete!;
+        MainFrame.Navigate(cpuSelectionPage);
     }
 
     private void GpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         GpuSelectionPage gpuSelectionPage = new GpuSelectionPage();
         gpuSelectionPage.ItemSelected += GpuSave!;
+        gpuSelectionPage.DeleteSelection += GpuDelete!;
         MainFrame.Navigate(gpuSelectionPage);
     }
     
-    private void CpuLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-    {
-        CpuSelectionPage cpuSelectionPage = new CpuSelectionPage();
-        cpuSelectionPage.ItemSelected += CpuSave!;
-        MainFrame.Navigate(cpuSelectionPage);
-    }
-
     private void RamLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         RamSelectionPage ramSelectionPage = new RamSelectionPage();
         ramSelectionPage.ItemSelected += RamSave!;
+        ramSelectionPage.DeleteSelection += RamDelete!;
         MainFrame.Navigate(ramSelectionPage);
     }
 
@@ -97,8 +153,8 @@ public partial class MainWindow : Window
     {
         MotherboardSelectionPage motherboardSelectionPage = new MotherboardSelectionPage();
         motherboardSelectionPage.ItemSelected += MotherboardSave!;
+        motherboardSelectionPage.DeleteSelection += MotherboardDelete!;
         MainFrame.Navigate(motherboardSelectionPage);
-
     }
 
 
@@ -106,6 +162,7 @@ public partial class MainWindow : Window
     {
         SsdSelectionPage ssdSelectionPage = new SsdSelectionPage();
         ssdSelectionPage.ItemSelected += SsdSave!;
+        ssdSelectionPage.DeleteSelection += SsdDelete!;
         MainFrame.Navigate(ssdSelectionPage);
     }
 
@@ -113,12 +170,14 @@ public partial class MainWindow : Window
     {
         HddSelectionPage hddSelectionPage = new HddSelectionPage();
         hddSelectionPage.ItemSelected += HddSave!;
+        hddSelectionPage.DeleteSelection += HddDelete!;
         MainFrame.Navigate(hddSelectionPage);
     }
     private void PowerSupplyLabel_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
     {
         PowerSupplieSelectionPage powerSupplieSelectionPage = new PowerSupplieSelectionPage();
-        powerSupplieSelectionPage.ItemSelected += PowerSupplySave;
+        powerSupplieSelectionPage.ItemSelected += PowerSupplieSave!;
+        powerSupplieSelectionPage.DeleteSelection += PowerSupplieDelete!;
         MainFrame.Navigate(powerSupplieSelectionPage);
     }
 
@@ -126,6 +185,12 @@ public partial class MainWindow : Window
     {
         CaseSelectionPage caseSelectionPage = new CaseSelectionPage();
         caseSelectionPage.ItemSelected += CaseSave!;
+        caseSelectionPage.DeleteSelection += CaseDelete!;
         MainFrame.Navigate(caseSelectionPage);
+    }
+
+    private void Configurations_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        MainFrame.Navigate(new ConfigurationsPage());
     }
 }

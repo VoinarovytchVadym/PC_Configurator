@@ -13,26 +13,80 @@ public abstract class Builder : IPC
 
     public IPC ConfigurationNameIs(string name)
     {
-        this.PcConfiguration.ConfigurationName = name;
+        this.PcConfiguration.FullName = name ?? throw new ArgumentNullException(nameof(name));
         return this;
     }
 
-    public IPC CpuIs(Cpu cpu)
+    public IPC CpuIs(Cpu? cpu)
     {
-        this.PcConfiguration.CpuId = cpu.Id;
+        if (cpu == null)
+            this.PcConfiguration.CpuId = null;
+        else
+            this.PcConfiguration.CpuId = cpu.Id;
         return this;
     }
 
-    public IPC GpuIs(Gpu gpu)
+    public IPC GpuIs(Gpu? gpu)
     {
-        this.PcConfiguration.GpuId = gpu.Id;
+        if (gpu == null)
+            this.PcConfiguration.GpuId = null;
+        else             
+            this.PcConfiguration.GpuId = gpu.Id;
         return this;
     }
     
 
-    public IPC RamIs(Ram ram)
+    public IPC RamIs(Ram? ram)
     {
-        this.PcConfiguration.RamId = ram.Id;
+        if (ram == null)
+            this.PcConfiguration.RamId = null;
+        else             
+            this.PcConfiguration.RamId = ram.Id;
+        return this;
+    }
+
+    public IPC MotherboardIs(Motherboard? motherboard)
+    {
+        if (motherboard == null)
+            this.PcConfiguration.MotherboardId = null;
+        else
+            this.PcConfiguration.MotherboardId = motherboard.Id;
+        return this;
+    }
+
+    public IPC SsdIs(Ssd? ssd)
+    {
+        if (ssd == null)
+            this.PcConfiguration.SsdId = null;
+        else
+            this.PcConfiguration.SsdId = ssd.Id;
+        return this;
+    }
+
+    public IPC HddIs(Hdd? hdd)
+    {
+        if (hdd == null)
+            this.PcConfiguration.HddId = null;
+        else
+            this.PcConfiguration.HddId = hdd.Id;
+        return this;
+    }
+
+    public IPC PowerSupplieIs(PowerSupplie? powerSupplie)
+    {
+        if (powerSupplie == null)
+            this.PcConfiguration.PowerSupplieId = null;
+        else
+            this.PcConfiguration.PowerSupplieId = powerSupplie.Id;
+        return this;
+    }
+
+    public IPC CaseIs(Case? @case)
+    {
+        if (@case == null)
+            this.PcConfiguration.CaseId = null;
+        else
+            this.PcConfiguration.CaseId = @case.Id;
         return this;
     }
 

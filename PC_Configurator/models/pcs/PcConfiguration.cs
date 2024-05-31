@@ -6,10 +6,15 @@ namespace PC_Configurator.models.pcs;
 public class PcConfiguration : IProduct
 {
     public int Id { get; set; }
-    public string ConfigurationName { get; set; } = "Configuration";
+    public string FullName { get; set; } = "Configuration";
     public int? GpuId { get; set; } = null;
     public int? CpuId { get; set; } = null;
     public int? RamId { get; set; } = null;
+    public int? MotherboardId { get; set; } = null;
+    public int? SsdId { get; set; } = null;
+    public int? HddId { get; set; } = null;
+    public int? PowerSupplieId { get; set; } = null;
+    public int? CaseId { get; set; } = null;
     public void SaveToDataBase()
     {
         Db db = Db.GetInstance();

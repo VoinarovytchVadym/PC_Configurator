@@ -13,9 +13,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#f5f8e7">
+        <Grid Background="#f5f8e7" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -43,6 +44,8 @@
         </Grid>
 
         <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
-
+        <Border Style="{DynamicResource SubmitButton}" Grid.Row="2" MaxWidth="400" MouseLeftButtonUp="Configurations_MouseLeftButtonUp">
+            <Label FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" Content="Configurations"/>
+        </Border>
     </Grid>
 </Window>

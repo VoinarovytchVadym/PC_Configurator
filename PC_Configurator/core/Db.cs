@@ -16,7 +16,7 @@ sealed class Db : DbContext
     public DbSet<PowerSupplie> PowerSupplies { get; set; }
     
     public DbSet<PcConfiguration> PcConfigurations { get; set; }
-    
+    private Db() { }
     private static Db? _db;
     private static readonly object RefObj = new object();
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

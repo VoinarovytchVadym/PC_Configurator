@@ -8,5 +8,10 @@ public interface IPC
     IPC CpuIs(Cpu cpu);
     IPC GpuIs(Gpu gpu);
     IPC RamIs(Ram ram);
+    IPC MotherboardIs(Motherboard motherboard);
+    IPC SsdIs(Ssd ssd);
+    IPC HddIs(Hdd hdd);
+    IPC PowerSupplieIs(PowerSupplie powerSupplie);
+    IPC CaseIs(Case @case);
     PcConfiguration CreateConfiguration();
 }

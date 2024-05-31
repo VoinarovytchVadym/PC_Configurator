@@ -6,31 +6,46 @@
       xmlns:local="clr-namespace:PC_Configurator.views"
       mc:Ignorable="d"
       Title="CaseSelectionPage">
-   <Grid>
+    <Grid>
         <Border>
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <ListView x:Name="CasesListView" SelectionChanged="CasesListView_OnSelectionChanged" HorizontalAlignment="Center" BorderBrush="Transparent">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Border Style="{DynamicResource ProductBorder}">
-                                <StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
-                                        <Label x:Name="GpuId" Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                <StackPanel>
+                    <Border Style="{DynamicResource SubmitButton}" Background="#e95e50" MaxWidth="400" Margin="20"
+                            MouseLeftButtonUp="Border_MouseLeftButtonUp">
+                        <Label Content="Clear Selection" FontSize="20" HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center" Margin="0 0 0 6" />
+                    </Border>
+                    <ListView x:Name="CasesListView" SelectionChanged="CasesListView_OnSelectionChanged"
+                              HorizontalAlignment="Center" BorderBrush="Transparent">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{DynamicResource ProductBorder}">
+                                    <StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">Producer:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Producer}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">Size:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Size}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">MaxMotherboardFormFactor:</Label>
+                                            <Label Style="{DynamicResource ProductValue}"
+                                                   Content="{Binding MaxMotherboardFormFactor}">
+                                            </Label>
+                                        </StackPanel>
                                     </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">Size:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Size}"></Label>
-                                    </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">MaxMotherboardFormFactor:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding MaxMotherboardFormFactor}"></Label>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackPanel>
             </ScrollViewer>
         </Border>
     </Grid>

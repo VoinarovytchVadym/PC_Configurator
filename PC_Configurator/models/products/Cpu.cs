@@ -2,10 +2,11 @@
 
 namespace PC_Configurator.models.products;
 
-public class Cpu(string producer, string line, string socket, int coresNumber, int streamsNumber, double frequency, string? graphicsCore)
+public class Cpu(string producer, string line, string socket, int coresNumber, int streamsNumber, double frequency, string? graphicsCore, string fullName)
     : IProduct
 {
     public int Id { get; set; }
+    public string FullName { get; set; } = fullName;
     public string Producer { get; set; } = producer;
     public string Line { get; set; } = line;
     public string Socket { get; set; } = socket;
