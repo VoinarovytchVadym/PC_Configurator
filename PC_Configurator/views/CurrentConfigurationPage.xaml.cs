@@ -106,5 +106,6 @@ public partial class CurrentConfigurationPage : Page
             .ConfigurationNameIs(trimmedName != string.Empty ? trimmedName : "New")
             .CreateConfiguration();
         configuration.SaveToDataBase();
+        NavigationService.Content = null;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Input;
 using PC_Configurator.core;
 using PC_Configurator.models.products;
 
@@ -15,10 +16,17 @@ public partial class SsdSelectionPage : Page
         SsdsListView.ItemsSource = _ssdList;
     }
     public event EventHandler<Ssd> ItemSelected;
-    
+    public event EventHandler DeleteSelection;
+
     private void SsdsListView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         ItemSelected.Invoke(this, _db.Ssds.FirstOrDefault(u=> u.Id == _ssdList[SsdsListView.SelectedIndex].Id)!);
         NavigationService!.Content = null;
+    }
+
+    private void Border_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        DeleteSelection?.Invoke(this, EventArgs.Empty);
+
     }
 }

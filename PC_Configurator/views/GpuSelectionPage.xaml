@@ -9,44 +9,55 @@
     <Grid>
         <Border>
             <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                <ListView x:Name="GpusListView" SelectionChanged="GpusListView_SelectionChanged" HorizontalAlignment="Center" BorderBrush="Transparent">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <Border Style="{DynamicResource ProductBorder}">
-                                <StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                <StackPanel>
+                    <Border Style="{DynamicResource SubmitButton}" Background="#e95e50" MaxWidth="400" Margin="20"
+                            MouseLeftButtonUp="Border_MouseLeftButtonUp">
+                        <Label Content="Clear Selection" FontSize="20" HorizontalContentAlignment="Center"
+                               VerticalContentAlignment="Center" Margin="0 0 0 6" />
+                    </Border>
+                    <ListView x:Name="GpusListView" SelectionChanged="GpusListView_SelectionChanged"
+                              HorizontalAlignment="Center" BorderBrush="Transparent">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border Style="{DynamicResource ProductBorder}">
+                                    <StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">FullName:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding FullName}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">ProcessorFamily:</Label>
+                                            <Label Style="{DynamicResource ProductValue}"
+                                                   Content="{Binding ProcessorFamily}">
+                                            </Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">Model:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Model}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">Vendor:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Vendor}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">Chip:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Chip}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">Vram:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Vram}"></Label>
+                                        </StackPanel>
+                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
+                                            <Label Style="{DynamicResource ProductLabel}">VramType:</Label>
+                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding VramType}"></Label>
+                                        </StackPanel>
                                     </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">ProcessorFamily:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding ProcessorFamily}"></Label>
-                                    </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">Model:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Model}"></Label>
-                                    </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">Vendor:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Vendor}"></Label>
-                                    </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">Chip:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Chip}"></Label>
-                                    </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">Vram:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding Vram}"></Label>
-                                    </StackPanel>
-                                    <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                        <Label Style="{DynamicResource ProductLabel}">VramType:</Label>
-                                        <Label Style="{DynamicResource ProductValue}" Content="{Binding VramType}"></Label>
-                                    </StackPanel>
-                                </StackPanel>
-                            </Border>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackPanel>
             </ScrollViewer>
         </Border>
     </Grid>
