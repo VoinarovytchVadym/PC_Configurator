@@ -188,4 +188,9 @@ public partial class MainWindow : Window
         caseSelectionPage.DeleteSelection += CaseDelete!;
         MainFrame.Navigate(caseSelectionPage);
     }
+
+    private void Configurations_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+    {
+        MainFrame.Navigate(new ConfigurationsPage());
+    }
 }

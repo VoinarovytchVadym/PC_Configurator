@@ -13,77 +13,69 @@ namespace PC_Configurator.views;
 public partial class CurrentConfigurationPage : Page
 {
     private Db db = Db.GetInstance();
-    private bool IsCpu;
-    private bool IsGpu;
-    private bool IsRam;
-    private bool IsMotherboard;
-    private bool IsSsd;
-    private bool IsHdd;
-    private bool IsPowerSupplie;
-    private bool IsCase;
 
     public CurrentConfigurationPage()
     {
         InitializeComponent();
-        IsCpu = MainWindow.Cpu != null;
-        IsGpu = MainWindow.Gpu != null;
-        IsRam = MainWindow.Ram != null;
-        IsMotherboard = MainWindow.Motherboard != null;
-        IsSsd = MainWindow.Ssd != null;
-        IsHdd = MainWindow.Hdd != null;
-        IsPowerSupplie = MainWindow.PowerSupplie != null;
-        IsCase = MainWindow.Case != null;
+        var isCpu = MainWindow.Cpu != null;
+        var isGpu = MainWindow.Gpu != null;
+        var isRam = MainWindow.Ram != null;
+        var isMotherboard = MainWindow.Motherboard != null;
+        var isSsd = MainWindow.Ssd != null;
+        var isHdd = MainWindow.Hdd != null;
+        var isPowerSupplie = MainWindow.PowerSupplie != null;
+        var isCase = MainWindow.Case != null;
 
-        if (IsCpu)
+        if (isCpu)
         {
             List<Cpu> cpu = [MainWindow.Cpu];
             SelectedCpu.ItemsSource = cpu;
             SelectedCpu.Visibility = Visibility.Visible;
         }
 
-        if (IsGpu)
+        if (isGpu)
         {
             List<Gpu> gpu = [MainWindow.Gpu];
             SelectedGpu.ItemsSource = gpu;
             SelectedGpu.Visibility = Visibility.Visible;
         }
 
-        if (IsRam)
+        if (isRam)
         {
             List<Ram> ram = [MainWindow.Ram];
             SelectedRam.ItemsSource = ram;
             SelectedRam.Visibility = Visibility.Visible;
         }
 
-        if (IsMotherboard)
+        if (isMotherboard)
         {
             List<Motherboard> motherboards = [MainWindow.Motherboard];
             SelectedMotherboard.ItemsSource = motherboards;
             SelectedMotherboard.Visibility = Visibility.Visible;
         }
 
-        if (IsSsd)
+        if (isSsd)
         {
             List<Ssd> ssds = [MainWindow.Ssd];
             SelectedSsd.ItemsSource = ssds;
             SelectedSsd.Visibility = Visibility.Visible;
         }
 
-        if (IsHdd)
+        if (isHdd)
         {
             List<Hdd> hdds = [MainWindow.Hdd];
             SelectedHdd.ItemsSource = hdds;
             SelectedHdd.Visibility = Visibility.Visible;
         }
 
-        if (IsPowerSupplie)
+        if (isPowerSupplie)
         {
             List<PowerSupplie> powerSupplies = [MainWindow.PowerSupplie];
             SelectedPowerSupplie.ItemsSource = powerSupplies;
             SelectedPowerSupplie.Visibility = Visibility.Visible;
         }
 
-        if (IsCase)
+        if (isCase)
         {
             List<Case> cases = [MainWindow.Case];
             SelectedCase.ItemsSource = cases;

@@ -36,25 +36,9 @@
                                             </Label>
                                         </StackPanel>
                                         <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                            <Label Style="{DynamicResource ProductLabel}">MemoryCapacity:</Label>
+                                            <Label Style="{DynamicResource ProductLabel}">Power:</Label>
                                             <Label Style="{DynamicResource ProductValue}"
-                                                   Content="{Binding MemoryCapacity}">
-                                            </Label>
-                                        </StackPanel>
-                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                            <Label Style="{DynamicResource ProductLabel}">Interface:</Label>
-                                            <Label Style="{DynamicResource ProductValue}" Content="{Binding Interface}"></Label>
-                                        </StackPanel>
-                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                            <Label Style="{DynamicResource ProductLabel}">ReadingSpeed:</Label>
-                                            <Label Style="{DynamicResource ProductValue}"
-                                                   Content="{Binding ReadingSpeed}">
-                                            </Label>
-                                        </StackPanel>
-                                        <StackPanel Style="{DynamicResource ProductStackPanel}">
-                                            <Label Style="{DynamicResource ProductLabel}">RecordingSpeed:</Label>
-                                            <Label Style="{DynamicResource ProductValue}"
-                                                   Content="{Binding RecordingSpeed}">
+                                                   Content="{Binding Power}">
                                             </Label>
                                         </StackPanel>
                                     </StackPanel>

@@ -48,7 +48,7 @@
                                         <StackPanel Style="{DynamicResource ProductStackPanel}">
                                             <Label Style="{DynamicResource ProductLabel}">RotatingSpeed:</Label>
                                             <Label Style="{DynamicResource ProductValue}"
-                                                   Content="{Binding ReadingSpeed}">
+                                                   Content="{Binding RotatingSpeed}">
                                             </Label>
                                         </StackPanel>
                                     </StackPanel>
